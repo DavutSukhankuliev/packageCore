@@ -1,11 +1,5 @@
 ﻿namespace SDTCore
 {
-    enum CommandStatus
-    {
-        Success,
-        InProgress,
-        Failed
-    }
     public class CommandResult
     {
         private object _body;

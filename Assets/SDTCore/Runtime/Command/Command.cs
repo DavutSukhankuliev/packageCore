@@ -3,13 +3,23 @@ using UnityEngine;
 
 namespace SDTCore
 {
-    public abstract class Command : ICommand
+    public abstract class Command : ICommand, IDisposable
     {
+        private CommandStorage _commandStorage;
+
         public EventHandler Done { get; set; }
+        public CommandStorage Storage => _commandStorage;
+        
+        public Command(CommandStorage commandStorage)
+        {
+            _commandStorage = commandStorage;
+            Storage.AddCommand(this);
+            Done += OnDone;
+        }
 
         public virtual CommandResult Execute()
         {
-            Debug.Log("Command Executed");
+            Storage.AddToHistory(this);
             return new CommandResult();
         }
 
@@ -28,6 +38,16 @@ namespace SDTCore
         public virtual void Cancel()
         {
             
+        }
+        
+        public virtual void Dispose()
+        {
+            
+        }
+
+        protected virtual void OnDone(object sender, EventArgs e)
+        {
+            Storage.RemoveCommand(this);
         }
     }
 }
