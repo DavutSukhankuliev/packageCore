@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SDTCore.Runtime.Command
+namespace SDTCore
 {
     public interface ICommand
     {

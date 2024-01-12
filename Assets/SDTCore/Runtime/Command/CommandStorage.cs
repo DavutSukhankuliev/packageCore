@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace SDTCore.Runtime.Command
+namespace SDTCore
 {
     public class CommandStorage
     {
@@ -13,6 +14,7 @@ namespace SDTCore.Runtime.Command
             if (_commands.ContainsKey(command.GetType()))
             {
                 _commands.Add(command.GetType(), command);
+                Debug.Log("Command added");
             }
         }
 
@@ -21,12 +23,14 @@ namespace SDTCore.Runtime.Command
             if (_commands.ContainsKey(command.GetType()))
             {
                 _commands.Remove(command.GetType());
+                Debug.Log("Command removed");
             }
         }
 
         void ClearAll()
         {
             _commands.Clear();
+            Debug.Log("Commands cleared");
         }
 
         void AddToHistory(Command command)

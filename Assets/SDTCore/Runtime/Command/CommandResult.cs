@@ -1,4 +1,4 @@
-﻿namespace SDTCore.Runtime.Command
+﻿namespace SDTCore
 {
     enum CommandStatus
     {

@@ -1,28 +1,33 @@
 using System;
+using UnityEngine;
 
-namespace SDTCore.Runtime.Command
+namespace SDTCore
 {
-    public class Command : ICommand
+    public abstract class Command : ICommand
     {
         public EventHandler Done { get; set; }
-        public CommandResult Execute()
+
+        public virtual CommandResult Execute()
         {
-            throw new NotImplementedException();
+            Debug.Log("Command Executed");
+            return new CommandResult();
         }
 
-        public CommandResult Undo()
+        public virtual CommandResult Undo()
         {
-            throw new NotImplementedException();
+            Debug.Log("Command Undo");
+            return new CommandResult();
         }
 
-        public CommandResult Redo()
+        public virtual CommandResult Redo()
         {
-            throw new NotImplementedException();
+            Debug.Log("Command Redo");
+            return new CommandResult();
         }
 
-        public void Cancel()
+        public virtual void Cancel()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
