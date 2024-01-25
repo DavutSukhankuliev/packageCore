@@ -15,10 +15,8 @@ namespace SDTCore
             if (_commands.ContainsKey(command.GetType()))
             {
                 _commands.Remove(command.GetType());
-                Debug.Log("Command removed");
             }
             _commands.Add(command.GetType(), command);
-            Debug.Log("Command added");
         }
 
         internal void RemoveCommand(Command command)
@@ -26,7 +24,6 @@ namespace SDTCore
             if (_commands.ContainsKey(command.GetType()))
             {
                 _commands.Remove(command.GetType());
-                Debug.Log("Command removed");
             }
         }
 
@@ -37,7 +34,6 @@ namespace SDTCore
                 command.Dispose();
             }
             _commands.Clear();
-            Debug.Log("Commands cleared");
         }
 
         internal void AddToHistory(Command command)
@@ -45,10 +41,8 @@ namespace SDTCore
             if (_historyIndex < _historyCommands.Count)
             {
                 _historyCommands.RemoveRange(_historyIndex, _historyCommands.Count - _historyIndex);
-                Debug.Log("Command history range removed");
             }
             _historyCommands.Add(command);
-            Debug.Log("Command history added");
             _historyIndex++;
         }
 
