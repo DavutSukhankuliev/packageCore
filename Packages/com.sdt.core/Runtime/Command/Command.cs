@@ -5,10 +5,9 @@ namespace SDTCore
 {
     public abstract class Command : ICommand, IDisposable
     {
-        private CommandStorage _commandStorage;
-
         public EventHandler Done { get; set; }
         public CommandStorage Storage => _commandStorage;
+        private CommandStorage _commandStorage;
         
         public Command(CommandStorage commandStorage)
         {
@@ -25,13 +24,11 @@ namespace SDTCore
 
         public virtual CommandResult Undo()
         {
-            Debug.Log("Command Undo");
             return new CommandResult();
         }
 
         public virtual CommandResult Redo()
         {
-            Debug.Log("Command Redo");
             return new CommandResult();
         }
 
