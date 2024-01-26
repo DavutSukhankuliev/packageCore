@@ -45,7 +45,7 @@ namespace SDTCore
             _historyIndex++;
         }
 
-        internal void UndoCommand()
+        public void UndoCommand()
         {
             if (_historyCommands.Count == 0)
             {
@@ -57,8 +57,8 @@ namespace SDTCore
                 _historyIndex--;
             }
         }
-        
-        internal void RedoCommand()
+
+        public void RedoCommand()
         {
             if (_historyCommands.Count == 0)
             {
