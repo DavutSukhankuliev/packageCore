@@ -13,6 +13,12 @@
     "core",
     "command"
   ],
+  "author": {
+    "name": "Davut Sukhankuliev",
+    "email": "stalker.davut2001@gmail.com",
+    "url": "https://github.com/DavutSukhankuliev"
+  },
+  "license": "MIT",
   "dependencies": {
     "com.svermeulen.extenject": "9.2.0-stcf3"
   },
