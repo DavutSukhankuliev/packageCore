@@ -4,7 +4,8 @@
 ##### 1. Purpose
 ##### 2. Dependencies
 ##### 3. Technologies
-##### 4. How to use
+##### 4. Installation
+##### 5. How to use
 
 </details>
 
@@ -19,6 +20,10 @@ The package meant to be a module for core patterns in development via [Zenject](
 
 - Dependency Injection
 - Pattern: Command
+
+# Installation
+
+To install package you need to click `Add project from git URL` and paste link `https://github.com/DavutSukhankuliev/packageCore.git?path=/Packages/com.sdt.core#v1.0.0`
 
 # How to use
 
